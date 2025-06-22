@@ -1,8 +1,8 @@
 import requests
 
 # Substitua abaixo pelos seus dados:
-BLOG_ID = "SEU_BLOG_ID"
-API_KEY = "SEU_API_KEY"
+BLOG_ID = "483973688844725319"
+API_KEY = "AIzaSyBdIoALNMFS1HCZcjIlf4NvrSrL_WLHTJM"
 
 def post_to_blogger(title, content):
     try:
