@@ -1,1 +1,1 @@
-# Funções auxiliares
+# Arquivo de funções auxiliares (vazio por enquanto)
