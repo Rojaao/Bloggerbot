@@ -1,1 +1,1 @@
-# Arquivo de funções auxiliares (vazio por enquanto)
+# utilitários futuros

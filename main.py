@@ -1,15 +1,21 @@
 
 import streamlit as st
 import pandas as pd
+from datetime import datetime
 
-st.set_page_config(page_title="Robô de Futebol - EV", layout="centered")
-st.title("Robô de Análise de Valor Esperado (EV)")
-st.write("Exemplo de jogos com cálculos de EV e probabilidade")
+st.set_page_config(page_title="Robô de Futebol - Dados Reais", layout="wide")
+st.title("Robô de Futebol com Dados Reais e Atualização em Tempo Real")
 
-# Carrega os dados
-df = pd.read_csv("data/exemplo_jogos.csv")
+tab1, tab2 = st.tabs(["⚽ Jogos AO VIVO", "📅 Jogos FUTUROS"])
 
-# Destaca onde EV é positivo e prob > 85%
-df['Destaque'] = df.apply(lambda row: '🟢' if row['prob_gol'] > 85 and float(row['ev']) > 0 else '', axis=1)
+# Placeholder - dados fictícios temporários para estrutura visual
+now = datetime.now().strftime("%H:%M:%S")
+with tab1:
+    st.subheader("Jogos ao vivo (atualizado às {})".format(now))
+    st.write("🔄 Em breve: dados reais de partidas em andamento com estatísticas de escanteios e gols.")
 
-st.dataframe(df)
+with tab2:
+    st.subheader("Jogos futuros com análise pré-live")
+    df = pd.read_csv("data/jogos_futuros.csv")
+    df['Destaque'] = df.apply(lambda row: '🟢' if row['prob_gol'] > 85 and float(row['ev']) > 0 else '', axis=1)
+    st.dataframe(df)
